@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Unusual Squad</title>
+    <link rel="icon" type="image/x-icon" href="/assets/unusualsquadlowres.png">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="navbar">
+        <img src="assets/unusualsquad.png">
+        <a href="#" class="enabled">Home</a>
+        <a href="#">Our Mods</a>
+        <a href="#">Wallpapers</a>
+        <a href="#">Shop(Coming Soon)</a>
+
+        <!-- suggested page, -->
+        <a href="{{ .SPLink }}">Suggested page: {{ .SPName }}</a>
+    </div>
+    <!--form action="/form-test">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value="CENA"><br><br>
+        <input type="submit" value="Submit">
+    </form-->
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Recusandae dignissimos aut eligendi aliquid cupiditate vero dolores corrupti explicabo inventore voluptatum, dolorem ullam soluta ut consequuntur pariatur odit saepe quod tenetur.</p>
+    {{template "sub-template"}}
+</body>
+</html>
