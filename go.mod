@@ -1,3 +1,3 @@
 module zezer.com/unusual_site
 
-go 1.21.2 //1.21.2
+go 1.23 //1.21.2
