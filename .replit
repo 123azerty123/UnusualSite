@@ -1,6 +1,6 @@
 run = "./main"
 hidden = ["main"]
-compile = "go build -o main ."
+compile = "build.bash"
 
 [languages.go]
 pattern = "**/*.go"
@@ -17,4 +17,4 @@ requiredFiles = [".replit", "replit.nix"]
 [deployment]
 run = ["sh", "-c", "./main"]
 deploymentTarget = "cloudrun"
-build = ["sh", "-c", "go build -o main ."]
+build = ["sh", "-c", "build.bash"]
