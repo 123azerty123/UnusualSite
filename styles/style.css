@@ -1,0 +1,165 @@
+@font-face {
+    font-family: Minecraft Ten v2;
+    src: url("../assets/MinecraftTen-VGORe.ttf");
+}
+
+body{
+    --scroll: 0;
+    --menuImgBoxW: 34.79166667vw; /*calc(501 / 1440 * 100vw);*/
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Minecraft Ten v2', sans-serif;
+    background-color: #282828;
+    color: white;
+    overflow-x: clip;
+}
+
+body > p{
+    margin: 1vw;
+}
+
+#navbar, #navbar *{
+    background-color: green;
+    height: 8vh;
+    padding: 1vh;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    align-content: center;
+}
+
+#navbar * {
+    margin: 1vh;
+}
+
+#navbar img {
+    height: 8vh;
+    width: auto;
+}
+
+#navbar a{
+    text-decoration: none;
+    color: chartreuse;
+}
+
+#footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100vw;
+    height: 7.5vh;
+    background-color: grey;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#footer *{
+    color: white;
+    background-color: grey;
+    position: absolute;
+}
+
+#footer #cpr{
+    bottom: 1vh;
+    right: 1vw;
+}
+
+#footer #reseaux{
+    left: 1vw;
+}
+
+#menu {
+    height: max(calc(176 / 1440 * 100vw), calc(78 / 2494 * 100vh));
+    background-color: #FFFFFF00;
+}
+
+#topBanner{
+    background: #1e1e1e;
+    padding-top: calc(39 / 2494 * 100vh);
+    padding-bottom: calc(39 / 2494 * 100vh);
+    width: 100vw;
+    height: calc(50 / 1440 * 100vw);
+    /*height: calc(198 / 2494 * 100vh);*/
+    /*flex-shrink: 0;*/
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: sticky;
+    top: 0px;
+    filter: drop-shadow(0px 2vh .75vh #1E1E1EFF);
+}
+
+#topBanner, #topBanner *{
+    /*--menuImgBoxW: 34.79166667vw; /*calc(501 / 1440 * 100vw);*/
+}
+
+#topBanner div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: calc(calc(100vw - var(--menuImgBoxW)) / 2);
+}
+
+#menuImgBox{
+    width: var(--menuImgBoxW)!important;
+    height: 0px;
+}
+
+.menuLink{
+    /*width: calc(calc(122px / 1440) * 100vw);
+    height: calc(calc(34px / 2494px) * 100vh);*/
+    color: #FFF;
+    font-size: calc(35 / 1440 * 100vw);
+    height: 0px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: relative;
+    bottom: calc(35 / 2880 * 100vw);
+}
+
+#menuDiscordLink{
+    color: #5865F2;
+}
+
+.menuImg{
+    width: var(--menuImgBoxW); /*calc(501 / 1440 * 100vw);*/
+    height: calc(176 / 1440 * 100vw);
+    flex-shrink: 0;
+    background: url("../assets/sweetylogowithout.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: fixed;
+    top: calc(22 / 2494 * 100vh);
+    left: calc(50vw - calc(var(--menuImgBoxW) / 2));
+    /*right: calc(50vw - calc(var(--menuImgBoxW) / 2));*/
+}
+
+.menuImg.menuImgWithSquad{
+    background: url("../assets/sweetylogowith.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*background-color: rgba(255, 255, 255, .5);*/
+    opacity: calc(1 - calc(var(--scroll)*6));
+}
+
+.menuImg.menuImgWithoutSquad{
+    /*background: url("../assets/logo-2.png");
+    background-color: rgba(0, 0, 0, .5);*/
+}
+
+
+#topBanner #redWShadow{
+    width: 100vw;
+    height: .1vh;
+    background-color: #E60000;
+    position: absolute;
+    bottom: 0;
+}
+
+svg.redRect{
+    margin-left: 5vw;
+}
