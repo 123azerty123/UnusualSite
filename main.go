@@ -25,6 +25,15 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+func tests(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "text/html") // text/plain
+	err := t.ExecuteTemplate(w, "menu.html", nil)
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+}
+
 func formTest(w http.ResponseWriter, r *http.Request) {
 	err := t.ExecuteTemplate(w, "form-test.html", nil)
 	if err != nil {
@@ -40,6 +49,8 @@ func handlerFunction(w http.ResponseWriter, r *http.Request) {
 	switch r.URL.Path {
 	case "/":
 		home(w, r)
+	case "/tests":
+		tests(w, r)
 	case "/form-test":
 		formTest(w, r)
 	case "/furtis_music":
