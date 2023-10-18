@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    {{template "matrix"}}
+    <div style="z-index: 101; position: absolute; left: 12.5vw; top: 12.5vh; width: 73vw; height: calc(75vh - 2vw); border-radius: 5vw; border: 1vw solid white;"></div>
+    <h1 style='z-index: 102;position: absolute; color:red;font-size: 8vh;text-align: center;top: 45vh;width: 100vw;background-color: #00000000;'>{{.}}</h1>
+</body>
+</html>

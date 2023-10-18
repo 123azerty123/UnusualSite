@@ -12,10 +12,9 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Minecraft Ten v2', sans-serif;
-    /*background-color: #282828;*/
+    background-color: #282828;
     color: white;
     overflow-x: clip;
-    background-color: #5865F2;
 }
 
 body > p{
@@ -175,41 +174,38 @@ body > p{
 svg.redRect{
     margin-left: 5vw;
 }
-/*
+
 .matrix *{
     overflow-x: visible!important;
-}*/
-
-@keyframes custom-vertical-floating {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-10px); }
 }
 
-.uwu {
-    /*animation: custom-vertical-floating 2s infinite linear;*/
-    /*animation: custom-vertical-floating 2s infinite alternate;*/
-    background-color: #E60000;
+@property --var {
+    syntax: '<number>'; /* <- defined as type number for the transition to work */
+    initial-value: 0;
+    inherits: false;
 }
-/*
+
 @keyframes bgChangePixelState {
     0% {
-        --val: 0;
-        background-color: red;
+        opacity: 0.0;
     }
     
-    25% {
-        --val: 1;
-        background-color: green;
+    25%, 50% {
+        opacity: 1.0;
     }
 
-    75% {
-        --val: 1;
-        background-color: blue;
-    }
-
-    100% {
-        --val: 0;
-        background-color: black;
+    75%, 100% {
+        opacity: 0.0;
     }
 }
-*/
+
+.pixel .pixel0{
+    opacity: 1.0;
+    animation: bgChangePixelState calc(1s * var(--val)) infinite linear;
+}
+
+.pixel .pixel1{
+    opacity: 0.0;
+    animation: bgChangePixelState calc(1s * var(--val)) infinite linear;
+    animation-delay: calc(-.5s * var(--val));
+}

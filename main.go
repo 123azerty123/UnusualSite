@@ -61,7 +61,7 @@ func handlerFunction(w http.ResponseWriter, r *http.Request) {
 		http.Redirect(w, r, "https://youtu.be/MTW4sIL9Dpw", http.StatusSeeOther)
 		fmt.Fprint(w, "No fighter has escaped it.")
 	default:
-		fmt.Fprint(w, "<h1 style='color:red;font-size: 20vh;text-align: center;margin-top: 40vh;'>404</h1>")
+		webpage(w, r, "warning.html", "404: "+names[rand.Intn(len(names))]+" not found.")
 	}
 }
 
@@ -115,3 +115,5 @@ var furtisMusics []string = []string{
 	"https://youtu.be/MmkAuMnYPGk",
 }
 var footer string = "<div id=footer><p>Not associated with or approved by Mojang Studios</p></div>"
+
+var names []string = []string{"Zezer", "To0pa", "Furti", "Leroidesafk", "Sweety"}
