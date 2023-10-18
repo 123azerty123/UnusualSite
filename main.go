@@ -25,9 +25,9 @@ func home(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func tests(w http.ResponseWriter, r *http.Request) {
+func webpage(w http.ResponseWriter, r *http.Request, s string, data any) {
 	w.Header().Set("Content-Type", "text/html") // text/plain
-	err := t.ExecuteTemplate(w, "menu.html", nil)
+	err := t.ExecuteTemplate(w, s, data)
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -50,7 +50,9 @@ func handlerFunction(w http.ResponseWriter, r *http.Request) {
 	case "/":
 		home(w, r)
 	case "/tests":
-		tests(w, r)
+		webpage(w, r, "tests.html", nil)
+	case "/copyright":
+		webpage(w, r, "copyright.html", nil)
 	case "/form-test":
 		formTest(w, r)
 	case "/furtis_music":
@@ -64,7 +66,21 @@ func handlerFunction(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
-	t, err = template.ParseGlob("*.html") //template.ParseFiles("index.html",)
+	t = template.New("")
+	t, err = t.Funcs(
+		template.FuncMap{
+			"Iterate": func(count int) []uint {
+				var i uint
+				var Items []uint
+				for i = 0; i < uint(count); i++ {
+					Items = append(Items, i)
+				}
+				return Items
+			},
+		},
+	).ParseGlob("*.html")
+
+	//t, err = t.ParseGlob("*.html") //template.ParseFiles("index.html",)
 	if err != nil {
 		fmt.Println(err)
 		return

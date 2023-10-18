@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body style="background-color: gray; --val: 1;">
+    {{define "pixel"}}
+    <div style="position: absolute; opacity: calc(1 - var(--val)); width: .5em; height: 3vh; color:greenyellow;">0</div>
+    <div style="position: absolute; opacity: var(--val); width: .5em; height: 3vh; color:greenyellow;">1</div>
+    {{end}}
+    {{define "matrix"}}
+    <div class="matrix" style="--bgOffset:0em">
+        {{- range $i := Iterate 3 }} <!--33-->
+        <div>
+            {{- range $j := Iterate 5 }} <!--156-->
+            <div style="--posY: {{$i}}; --posX: {{$j}}; --val: calc(calc({{$i}} + {{$j}}) % 2);">
+                <div style="position: absolute; left: calc(var(--bgOffset) + calc(.6em * {{$j}} )); top: calc(.5vh + calc(3vh * {{$i}} )); overflow-x: visible;">
+                    {{template "pixel"}}
+                </div>
+            </div>
+            {{- end}}
+        </div>
+        {{- end}}
+    </div>
+    {{end}}
+</body>
+</html>

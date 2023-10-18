@@ -1,6 +1,6 @@
 @font-face {
     font-family: Minecraft Ten v2;
-    src: url("../assets/MinecraftTen-VGORe.ttf");
+    src: url("../assets/font/minecraft-ten-lowercase.ttf");
 }
 
 body{
@@ -12,13 +12,25 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Minecraft Ten v2', sans-serif;
-    background-color: #282828;
+    /*background-color: #282828;*/
     color: white;
     overflow-x: clip;
+    background-color: #5865F2;
 }
 
 body > p{
     margin: 1vw;
+}
+
+.redBoxThingy{
+    margin-bottom: 20vh;
+    width: 80vw;
+    padding-left: 10vw;
+    padding-top: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #navbar, #navbar *{
@@ -163,3 +175,41 @@ body > p{
 svg.redRect{
     margin-left: 5vw;
 }
+/*
+.matrix *{
+    overflow-x: visible!important;
+}*/
+
+@keyframes custom-vertical-floating {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+.uwu {
+    /*animation: custom-vertical-floating 2s infinite linear;*/
+    /*animation: custom-vertical-floating 2s infinite alternate;*/
+    background-color: #E60000;
+}
+/*
+@keyframes bgChangePixelState {
+    0% {
+        --val: 0;
+        background-color: red;
+    }
+    
+    25% {
+        --val: 1;
+        background-color: green;
+    }
+
+    75% {
+        --val: 1;
+        background-color: blue;
+    }
+
+    100% {
+        --val: 0;
+        background-color: black;
+    }
+}
+*/
