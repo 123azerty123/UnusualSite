@@ -66,6 +66,7 @@ func handlerFunction(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	fmt.Println("Let's Go!")
 	t = template.New("")
 	t, err = t.Funcs(
 		template.FuncMap{
@@ -100,7 +101,7 @@ func main() {
 }
 
 var suggestedPages [][2]string = [][2]string{
-	{"The Unusual Discord", "https://discord.gg/k3fGJwJqzu"},
+	{"The Unusual Discord", "https://discord.gg/unusual-squad-770319580195061842"},
 	{"An Easter Egg", "./easter_egg"},
 	{"A Musical Work Of Art", "./furtis_music"},
 }
